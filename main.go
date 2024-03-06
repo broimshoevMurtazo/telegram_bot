@@ -58,9 +58,10 @@ func Recovary() {
 			}
 		} else {
 			if isEditingPassword {
-				for _, item := range SignUpSlice {
+				for i, item := range SignUpSlice {
 					if item.TelegramLogin == update.Message.Chat.UserName {
-						item.Password = update.Message.Text
+						SignUpSlice[i].Password= update.Message.Text
+						Writer()
 						// newpassword := field.TelegramLogin
 						// SignUpSlice[i].Password
 					}
